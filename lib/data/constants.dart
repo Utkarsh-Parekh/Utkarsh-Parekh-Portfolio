@@ -4,7 +4,6 @@ import '../models/project_model.dart';
 import '../models/skill_category_model.dart';
 import '../models/experience_model.dart';
 
-
 class ProfileData {
   static const String name = 'Utkarsh Parekh';
   static const String title = 'Flutter Developer';
@@ -21,9 +20,8 @@ class ProfileData {
   static const String instagramUrl =
       'https://www.instagram.com/flutter_devverse/?hl=en';
   static const String resumeUrl =
-  'https://drive.google.com/file/d/1xlcP2QWtL5Blxag-Wb-7RkFDwLvTC0cC/view?usp=sharing';
+      'https://drive.google.com/file/d/1xlcP2QWtL5Blxag-Wb-7RkFDwLvTC0cC/view?usp=sharing';
 }
-
 
 // ==================== SKILL CATEGORIES DATA ====================
 
@@ -32,31 +30,69 @@ final List<SkillCategoryModel> skillCategoriesData = [
     categoryName: 'Mobile Development',
     categoryIcon: Icons.phone_android,
     categoryColor: Color(0xFF2196F3),
-    skills: ['Flutter', 'Dart', 'Android', 'Kotlin', 'Java', 'UI/UX Design', 'Responsive Layouts'],
+    skills: [
+      'Flutter',
+      'Dart',
+      'Android',
+      'Kotlin',
+      'Java',
+      'UI/UX Design',
+      'Responsive Layouts',
+    ],
   ),
   const SkillCategoryModel(
     categoryName: 'Architecture & Patterns',
     categoryIcon: Icons.architecture,
     categoryColor: Color(0xFF2196F3),
-    skills: ['MVVM', 'MVC', 'BLoC', 'Provider', 'Clean Architecture', 'State Management', 'TDD','OOP'],
+    skills: [
+      'MVVM',
+      'MVC',
+      'BLoC',
+      'Provider',
+      'Clean Architecture',
+      'State Management',
+      'TDD',
+      'OOP',
+    ],
   ),
   const SkillCategoryModel(
     categoryName: 'Backend & Database',
     categoryIcon: Icons.cloud,
     categoryColor: Color(0xFF2196F3),
-    skills: ['Node.js', 'Express.js', 'MongoDB', 'Firebase', 'REST API', 'JWT Auth','AWS'],
+    skills: [
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Firebase',
+      'REST API',
+      'JWT Auth',
+      'AWS',
+    ],
   ),
   const SkillCategoryModel(
     categoryName: 'Tools & Libraries',
     categoryIcon: Icons.build,
     categoryColor: Color(0xFF2196F3),
-    skills: ['Google Maps', 'Payment Gateway', 'Postman', 'Git', 'JIRA', 'Android Studio', 'VS Code'],
+    skills: [
+      'Google Maps',
+      'Payment Gateway',
+      'Postman',
+      'Git',
+      'JIRA',
+      'Android Studio',
+      'VS Code',
+    ],
   ),
   const SkillCategoryModel(
     categoryName: 'Software Engineering',
     categoryIcon: Icons.engineering,
     categoryColor: Color(0xFF2196F3),
-    skills: ['Agile Methodology', 'CI/CD', 'GitHub Actions', 'Modular Codebase'],
+    skills: [
+      'Agile Methodology',
+      'CI/CD',
+      'GitHub Actions',
+      'Modular Codebase',
+    ],
   ),
 ];
 
@@ -67,16 +103,29 @@ final List<ExperienceModel> experienceData = [
     company: 'Tata Consultancy Services (TCS)',
     position: 'System Engineer',
     duration: '2022 - 2025',
-    description:
-        'Software Engineer specializing in Flutter development for enterprise-grade mobile applications. Leading cross-functional feature development and ensuring scalable architecture.',
+    description: '',
+    highlights: [
+      'Delivered high-quality mobile applications using Flutter & Dart for government and client projects, ensuring cross-platform scalability and maintainability.',
+      'Implemented secure RESTful API integrations for login, signup, and user management, including advanced features like biometric authentication.',
+      'Improved software stability and performance for the MEDIAUSB feature in Nissan IVI Automotive systems by resolving critical bugs efficiently.',
+      'Enhanced code quality and reliability by designing and refining UI test cases with Espresso, boosting module coverage by 5–10%.',
+      'Collaborated effectively with onsite teams to implement feature enhancements, optimize processes, and ensure timely project delivery.',
+    ],
     companyColor: Color(0xFF0076CE),
     isCurrent: false,
   ),
   ExperienceModel(
     company: '10X Export',
-    position: 'Full-Stack Flutter Developer',
+    position: 'Full Stack Mobile Developer',
     duration: '2025 - Present',
-    description: 'Description of your role...',
+    description: '',
+    highlights: [
+      'Independently developed a robust Import-Export application using Flutter + BLoC with clean architecture, ensuring scalability and maintainability.',
+      'Implemented secure user authentication and management leveraging Node.js, Express.js, MongoDB, and JWT, prioritizing data protection.',
+      'Designed and integrated RESTful APIs, tested thoroughly with Postman to guarantee reliable and seamless backend communication.',
+      'Managed the full project lifecycle, including requirement analysis, backend & frontend development, API integration, and testing.',
+      'Delivered high-quality, scalable, and efficient cross-platform solutions, focusing on maintainable code and optimal performance.',
+    ],
     companyColor: Color(0xFF00A67E),
     isCurrent: true,
   ),
@@ -89,7 +138,7 @@ final List<ProjectModel> projectsData = [
     name: 'Gemini-ChatBot',
     description:
         'AI-powered chatbot application built with Flutter, integrating Google\'s Gemini API for intelligent conversations and responses.',
-    techStack: ['Flutter', 'Dart', 'Gemini API', 'AI/ML'],
+    techStack: ['Flutter', 'Dart', 'Gemini API', 'BLoC'],
     githubUrl: 'https://github.com/Utkarsh-Parekh/Gemini-ChatBot',
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -109,7 +158,7 @@ final List<ProjectModel> projectsData = [
     name: 'Grocery-Shopping-App',
     description:
         'Complete grocery shopping solution with product catalog, cart management, and seamless checkout experience.',
-    techStack: ['Flutter', 'Dart', 'Firebase', 'Provider'],
+    techStack: ['Flutter', 'Dart', 'Stripe', 'Provider'],
     githubUrl: 'https://github.com/Utkarsh-Parekh/Grocery-Shopping-App-Flutter',
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -118,8 +167,8 @@ final List<ProjectModel> projectsData = [
   const ProjectModel(
     name: 'EV-Charging-App',
     description:
-        'Electric vehicle charging station finder app with map integration, station details, and booking functionality.',
-    techStack: ['Flutter', 'Dart', 'Google Maps', 'REST API'],
+    'Developed a modern, responsive EV Charging app in Flutter by converting a professional Figma design into dynamic, pixel-perfect screens. Integrated Google Sign-In, Light & Dark theme switching, and implemented clean, maintainable code for scalable cross-platform performance.',
+    techStack: ['Flutter', 'Dart', 'Responsive', 'Google SignIn'],
     githubUrl: 'https://github.com/Utkarsh-Parekh/EV-Charging-App',
     language: 'Dart',
     languageColor: AppColors.dartColor,

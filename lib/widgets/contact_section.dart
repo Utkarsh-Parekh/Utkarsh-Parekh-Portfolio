@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,13 +11,21 @@ import 'gradient_button.dart';
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
 
+  String get _emailUrl {
+    if (kIsWeb) {
+      return 'https://mail.google.com/mail/?view=cm&fs=1&to=${Uri.encodeComponent(ProfileData.email)}';
+    }
+    return 'mailto:${ProfileData.email}';
+  }
+
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
     try {
-      await launchUrl(
-        uri,
-        mode: LaunchMode.externalApplication,
-      );
+      if (kIsWeb) {
+        await launchUrl(uri, mode: LaunchMode.platformDefault);
+      } else {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+      }
     } catch (e) {
       try {
         await launchUrl(uri);
@@ -201,7 +210,7 @@ class ContactSection extends StatelessWidget {
               GradientButton(
                 text: 'Send Email',
                 icon: Icons.send,
-                onPressed: () => _launchUrl('mailto:${ProfileData.email}'),
+                onPressed: () => _launchUrl(_emailUrl),
                 width: isMobile ? double.infinity : 180,
               )
                   .animate()

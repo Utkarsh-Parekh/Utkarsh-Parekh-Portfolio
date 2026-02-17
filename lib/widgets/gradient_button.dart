@@ -60,10 +60,7 @@ class _GradientButtonState extends State<GradientButton>
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
         onTapDown: (_) => _controller.forward(),
-        onTapUp: (_) {
-          _controller.reverse();
-          widget.onPressed();
-        },
+        onTapUp: (_) => _controller.reverse(),
         onTapCancel: () => _controller.reverse(),
         child: AnimatedBuilder(
           animation: _scaleAnimation,
@@ -196,10 +193,7 @@ class _IconGradientButtonState extends State<IconGradientButton>
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
         onTapDown: (_) => _controller.forward(),
-        onTapUp: (_) {
-          _controller.reverse();
-          widget.onPressed();
-        },
+        onTapUp: (_) => _controller.reverse(),
         onTapCancel: () => _controller.reverse(),
         child: AnimatedBuilder(
           animation: _scaleAnimation,

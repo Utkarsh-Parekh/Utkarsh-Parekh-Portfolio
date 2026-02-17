@@ -425,20 +425,52 @@ class _ExperienceCardState extends State<_ExperienceCard>
   }
 
   Widget _buildExpandedContent() {
+    final hasDescription = widget.experience.description.isNotEmpty;
+    final hasHighlights = widget.experience.highlights.isNotEmpty;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 12),
-        
-        // Description only
-        Text(
-          widget.experience.description,
-          style: GoogleFonts.poppins(
-            fontSize: widget.isMobile ? 13 : 14,
-            color: AppColors.textSecondary,
-            height: 1.6,
+        if (hasDescription)
+          Text(
+            widget.experience.description,
+            style: GoogleFonts.poppins(
+              fontSize: widget.isMobile ? 13 : 14,
+              color: AppColors.textSecondary,
+              height: 1.6,
+            ),
           ),
-        ),
+        if (hasDescription && hasHighlights) const SizedBox(height: 12),
+        if (hasHighlights)
+          ...widget.experience.highlights.map(
+            (point) => Padding(
+              padding: const EdgeInsets.only(bottom: 6),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '• ',
+                    style: GoogleFonts.poppins(
+                      fontSize: widget.isMobile ? 13 : 14,
+                      color: AppColors.primaryPurple,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Expanded(
+                    child: Text(
+                      point,
+                      style: GoogleFonts.poppins(
+                        fontSize: widget.isMobile ? 13 : 14,
+                        color: AppColors.textSecondary,
+                        height: 1.6,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
       ],
     );
   }

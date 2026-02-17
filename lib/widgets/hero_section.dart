@@ -163,41 +163,37 @@ class HeroSection extends StatelessWidget {
                   
                   // Social Links
                   _buildSocialLinks(isMobile),
+                  
+                  const SizedBox(height: 32),
+                  
+                  // Scroll Down (below social links)
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Scroll Down',
+                        style: GoogleFonts.poppins(
+                          fontSize: 12,
+                          color: AppColors.textMuted,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Icon(
+                        Icons.keyboard_arrow_down,
+                        color: AppColors.textMuted,
+                        size: 24,
+                      )
+                          .animate(
+                            onPlay: (controller) => controller.repeat(reverse: true),
+                          )
+                          .moveY(begin: 0, end: 8, duration: 1000.ms),
+                    ],
+                  )
+                      .animate()
+                      .fadeIn(duration: 600.ms, delay: 1200.ms),
                 ],
               ),
             ),
-          ),
-          
-          // Scroll indicator
-          Positioned(
-            bottom: 30,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Column(
-                children: [
-                  Text(
-                    'Scroll Down',
-                    style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      color: AppColors.textMuted,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Icon(
-                    Icons.keyboard_arrow_down,
-                    color: AppColors.textMuted,
-                    size: 24,
-                  )
-                      .animate(
-                        onPlay: (controller) => controller.repeat(reverse: true),
-                      )
-                      .moveY(begin: 0, end: 8, duration: 1000.ms),
-                ],
-              ),
-            )
-                .animate()
-                .fadeIn(duration: 600.ms, delay: 1200.ms),
           ),
         ],
       ),

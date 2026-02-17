@@ -5,6 +5,7 @@ class ExperienceModel {
   final String position;
   final String duration;
   final String description;
+  final List<String> highlights;
   final Color companyColor;
   final bool isCurrent;
 
@@ -13,6 +14,7 @@ class ExperienceModel {
     required this.position,
     required this.duration,
     required this.description,
+    this.highlights = const [],
     required this.companyColor,
     this.isCurrent = false,
   });
