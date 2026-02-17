@@ -7,26 +7,31 @@ import '../models/experience_model.dart';
 
 class ProfileData {
   static const String name = 'Utkarsh Parekh';
-  static const String title = 'Flutter Developer';
-  static const String subtitle =
-      'A passionate & result oriented Android/Flutter developer';
+  static const String title = 'Software Engineer(Mobile)';
 
-  // NOTE: `String.fromEnvironment` must be used in a const context for Flutter web.
-  static const String email =
-      String.fromEnvironment(EnvKeys.profileEmail, defaultValue: '');
+  static const String email = String.fromEnvironment(
+    EnvKeys.profileEmail,
+    defaultValue: '',
+  );
 
-  static const String bio = '''
-  Flutter Developer with 3+ years of experience in building scalable, high-performance cross-platform mobile applications. Proficient in Flutter (Dart), Android development using Kotlin and Java, REST API integration, state management, and clean architecture. Strong focus on UI/UX best practices, performance optimization, and maintainable code.
-''';
+  static const String bio = '''Mobile Engineer with 3+ years of experience in building scalable, high-performance mobile applications across Flutter and native Android. Skilled in Dart, Kotlin, Java, REST API integration, state management, and clean architecture, with a strong focus on UI/UX best practices, performance optimization, and maintainable code.''';
 
-  static const String githubUrl =
-      String.fromEnvironment(EnvKeys.profileGithubUrl, defaultValue: '');
-  static const String linkedinUrl =
-      String.fromEnvironment(EnvKeys.profileLinkedinUrl, defaultValue: '');
-  static const String instagramUrl =
-      String.fromEnvironment(EnvKeys.profileInstagramUrl, defaultValue: '');
-  static const String resumeUrl =
-      String.fromEnvironment(EnvKeys.profileResumeUrl, defaultValue: '');
+  static const String githubUrl = String.fromEnvironment(
+    EnvKeys.profileGithubUrl,
+    defaultValue: '',
+  );
+  static const String linkedinUrl = String.fromEnvironment(
+    EnvKeys.profileLinkedinUrl,
+    defaultValue: '',
+  );
+  static const String instagramUrl = String.fromEnvironment(
+    EnvKeys.profileInstagramUrl,
+    defaultValue: '',
+  );
+  static const String resumeUrl = String.fromEnvironment(
+    EnvKeys.profileResumeUrl,
+    defaultValue: '',
+  );
 }
 
 // ==================== SKILL CATEGORIES DATA ====================
@@ -145,8 +150,11 @@ final List<ProjectModel> projectsData = [
     name: 'Gemini-ChatBot',
     description:
         'AI-powered chatbot application built with Flutter, integrating Google\'s Gemini API for intelligent conversations and responses.',
-    techStack:  ['Flutter', 'Dart', 'Gemini API', 'BLoC'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectGeminiBotGithubUrl, defaultValue: ''),
+    techStack: ['Flutter', 'Dart', 'Gemini API', 'BLoC'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectGeminiBotGithubUrl,
+      defaultValue: '',
+    ),
     language: 'Dart',
     languageColor: AppColors.dartColor,
     icon: Icons.smart_toy,
@@ -155,8 +163,11 @@ final List<ProjectModel> projectsData = [
     name: 'Tasks-App-Flutter',
     description:
         'A beautiful and functional task management application with intuitive UI, local storage, and smooth animations.',
-    techStack:  ['Flutter', 'Dart', 'SQLite', 'Provider'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectTasksGithubUrl, defaultValue: ''),
+    techStack: ['Flutter', 'Dart', 'SQLite', 'Provider'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectTasksGithubUrl,
+      defaultValue: '',
+    ),
     language: 'Dart',
     languageColor: AppColors.dartColor,
     icon: Icons.check_circle,
@@ -165,8 +176,11 @@ final List<ProjectModel> projectsData = [
     name: 'Grocery-Shopping-App',
     description:
         'Complete grocery shopping solution with product catalog, cart management, and seamless checkout experience.',
-    techStack:  ['Flutter', 'Dart', 'Stripe', 'Provider'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectGroceryGithubUrl, defaultValue: ''),
+    techStack: ['Flutter', 'Dart', 'Stripe', 'Provider'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectGroceryGithubUrl,
+      defaultValue: '',
+    ),
     language: 'Dart',
     languageColor: AppColors.dartColor,
     icon: Icons.shopping_cart,
@@ -175,8 +189,11 @@ final List<ProjectModel> projectsData = [
     name: 'EV-Charging-App',
     description:
         'Developed a modern, responsive EV Charging app in Flutter by converting a professional Figma design into dynamic, pixel-perfect screens. Integrated Google Sign-In, Light & Dark theme switching, and implemented clean, maintainable code for scalable cross-platform performance.',
-    techStack:  ['Flutter', 'Dart', 'Responsive', 'Firebase'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectEVsGithubUrl, defaultValue: ''),
+    techStack: ['Flutter', 'Dart', 'Responsive', 'Firebase'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectEVsGithubUrl,
+      defaultValue: '',
+    ),
     language: 'Dart',
     languageColor: AppColors.dartColor,
     icon: Icons.ev_station,
@@ -185,8 +202,11 @@ final List<ProjectModel> projectsData = [
     name: 'Google Maps Integration',
     description:
         'Comprehensive Google Maps implementation showcasing markers, routes, location tracking, and custom styling.',
-    techStack:  ['Flutter', 'Dart', 'Google Maps SDK', 'Geolocator'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectGoogleMapGithubUrl, defaultValue: ''),
+    techStack: ['Flutter', 'Dart', 'Google Maps SDK', 'Geolocator'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectGoogleMapGithubUrl,
+      defaultValue: '',
+    ),
     language: 'Dart',
     languageColor: AppColors.dartColor,
     icon: Icons.map,
@@ -195,8 +215,11 @@ final List<ProjectModel> projectsData = [
     name: 'Authentication Backend',
     description:
         'Secure backend authentication system with JWT tokens, user management, and RESTful API endpoints.',
-    techStack:  ['Node.js', 'Express', 'JWT', 'MongoDB'],
-    githubUrl: String.fromEnvironment(EnvKeys.projectAuthBackendGithubUrl, defaultValue: ''),
+    techStack: ['Node.js', 'Express', 'JWT', 'MongoDB'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectAuthBackendGithubUrl,
+      defaultValue: '',
+    ),
     language: 'JavaScript',
     languageColor: AppColors.javascriptColor,
     icon: Icons.security,

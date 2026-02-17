@@ -70,7 +70,7 @@ class HeroSection extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  GradientText(
+                  LoopingTypewriterGradientText(
                     text: ProfileData.name,
                     style: GoogleFonts.poppins(
                       fontSize: isMobile ? 36 : isTablet ? 52 : 64,
@@ -78,6 +78,9 @@ class HeroSection extends StatelessWidget {
                       letterSpacing: -1,
                     ),
                     gradient: AppColors.primaryGradient,
+                    typingSpeed: const Duration(milliseconds: 100),
+                    pauseDuration: const Duration(seconds: 3),
+                    eraseSpeed: const Duration(milliseconds: 50),
                   )
                       .animate()
                       .fadeIn(duration: 800.ms)

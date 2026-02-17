@@ -185,4 +185,132 @@ class _AnimatedGradientTextState extends State<AnimatedGradientText>
   }
 }
 
+class LoopingTypewriterGradientText extends StatefulWidget {
+  final String text;
+  final TextStyle? style;
+  final Gradient gradient;
+  final Duration typingSpeed;
+  final Duration pauseDuration;
+  final Duration eraseSpeed;
+  final bool showCursor;
+
+  const LoopingTypewriterGradientText({
+    super.key,
+    required this.text,
+    this.style,
+    required this.gradient,
+    this.typingSpeed = const Duration(milliseconds: 100),
+    this.pauseDuration = const Duration(seconds: 2),
+    this.eraseSpeed = const Duration(milliseconds: 50),
+    this.showCursor = true,
+  });
+
+  @override
+  State<LoopingTypewriterGradientText> createState() =>
+      _LoopingTypewriterGradientTextState();
+}
+
+class _LoopingTypewriterGradientTextState
+    extends State<LoopingTypewriterGradientText> {
+  String _displayText = '';
+  int _charIndex = 0;
+  Timer? _animationTimer;
+  bool _showCursor = true;
+  Timer? _cursorTimer;
+
+  @override
+  void initState() {
+    super.initState();
+    _startTyping();
+    if (widget.showCursor) {
+      _startCursorBlink();
+    }
+  }
+
+  void _startTyping() {
+    _charIndex = 0;
+    _displayText = '';
+
+    _animationTimer = Timer.periodic(widget.typingSpeed, (timer) {
+      if (_charIndex < widget.text.length) {
+        setState(() {
+          _displayText = widget.text.substring(0, _charIndex + 1);
+          _charIndex++;
+        });
+      } else {
+        timer.cancel();
+        Future.delayed(widget.pauseDuration, () {
+          if (mounted) {
+            _startErasing();
+          }
+        });
+      }
+    });
+  }
+
+  void _startErasing() {
+    _charIndex = widget.text.length;
+
+    _animationTimer = Timer.periodic(widget.eraseSpeed, (timer) {
+      if (_charIndex > 0) {
+        setState(() {
+          _charIndex--;
+          _displayText = widget.text.substring(0, _charIndex);
+        });
+      } else {
+        timer.cancel();
+        Future.delayed(const Duration(milliseconds: 500), () {
+          if (mounted) {
+            _startTyping();
+          }
+        });
+      }
+    });
+  }
+
+  void _startCursorBlink() {
+    _cursorTimer = Timer.periodic(const Duration(milliseconds: 500), (timer) {
+      if (mounted) {
+        setState(() {
+          _showCursor = !_showCursor;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _animationTimer?.cancel();
+    _cursorTimer?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ShaderMask(
+      blendMode: BlendMode.srcIn,
+      shaderCallback: (bounds) => widget.gradient.createShader(
+        Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+      ),
+      child: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: _displayText,
+              style: widget.style,
+            ),
+            if (widget.showCursor)
+              TextSpan(
+                text: _showCursor ? '|' : ' ',
+                style: widget.style?.copyWith(
+                  fontWeight: FontWeight.w100,
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 
