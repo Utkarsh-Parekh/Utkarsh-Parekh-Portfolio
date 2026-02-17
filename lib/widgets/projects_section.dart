@@ -158,8 +158,6 @@ class _ProjectCardState extends State<_ProjectCard> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeOutCubic,
-          transform: Matrix4.identity()
-            ..translateByDouble(0.0, _isHovered ? -8.0 : 0.0, 0.0,0.0),
           decoration: BoxDecoration(
             gradient: AppColors.cardGradient,
             borderRadius: BorderRadius.circular(20),
@@ -331,8 +329,6 @@ class _ProjectCardState extends State<_ProjectCard> {
                             const SizedBox(width: 8),
                             AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
-                              transform: Matrix4.identity()
-                                ..translateByDouble(0.0, _isHovered ? -8.0 : 0.0, 0.0,0.0),
                               child: Icon(
                                 Icons.arrow_forward,
                                 size: 16,
