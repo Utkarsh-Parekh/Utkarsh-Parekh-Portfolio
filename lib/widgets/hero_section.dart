@@ -200,23 +200,6 @@ class HeroSection extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialButton(
-    IconData icon,
-    String tooltip,
-    String url,
-    int index,
-  ) {
-    return IconGradientButton(
-      icon: icon,
-      tooltip: tooltip,
-      onPressed: () => _launchUrl(url),
-      size: 48,
-    )
-        .animate()
-        .fadeIn(duration: 400.ms, delay: Duration(milliseconds: 800 + (index * 100)))
-        .scale(begin: const Offset(0.5, 0.5), end: const Offset(1, 1));
-  }
-
   List<Widget> _buildBackgroundElements(double width, double height) {
     return [
       // Top right gradient circle
@@ -230,7 +213,7 @@ class HeroSection extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: RadialGradient(
               colors: [
-                AppColors.primaryPurple.withOpacity(0.15),
+                AppColors.primaryPurple.withValues(alpha: 0.15),
                 Colors.transparent,
               ],
             ),
@@ -257,7 +240,7 @@ class HeroSection extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: RadialGradient(
               colors: [
-                AppColors.primaryBlue.withOpacity(0.1),
+                AppColors.primaryBlue.withValues(alpha:   0.1),
                 Colors.transparent,
               ],
             ),
@@ -284,7 +267,7 @@ class HeroSection extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: RadialGradient(
               colors: [
-                AppColors.accentOrange.withOpacity(0.08),
+                AppColors.accentOrange.withValues(alpha:   0.08),
                 Colors.transparent,
               ],
             ),

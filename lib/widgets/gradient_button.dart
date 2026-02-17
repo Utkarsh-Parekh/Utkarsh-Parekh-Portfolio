@@ -83,14 +83,14 @@ class _GradientButtonState extends State<GradientButton>
                   boxShadow: _isHovered
                       ? [
                           BoxShadow(
-                            color: AppColors.primaryPurple.withOpacity(0.4),
+                            color: AppColors.primaryPurple.withValues(alpha:  0.4),
                             blurRadius: 20,
                             spreadRadius: 2,
                           ),
                         ]
                       : [
                           BoxShadow(
-                            color: AppColors.primaryPurple.withOpacity(0.2),
+                            color: AppColors.primaryPurple.withValues(alpha: 0.2),
                             blurRadius: 10,
                             spreadRadius: 1,
                           ),
@@ -210,14 +210,14 @@ class _IconGradientButtonState extends State<IconGradientButton>
                   boxShadow: _isHovered
                       ? [
                           BoxShadow(
-                            color: AppColors.primaryPurple.withOpacity(0.5),
+                            color: AppColors.primaryPurple.withValues(alpha:0.5),
                             blurRadius: 20,
                             spreadRadius: 3,
                           ),
                         ]
                       : [
                           BoxShadow(
-                            color: AppColors.primaryPurple.withOpacity(0.3),
+                            color: AppColors.primaryPurple.withValues(alpha: 0.3),
                             blurRadius: 10,
                             spreadRadius: 1,
                           ),

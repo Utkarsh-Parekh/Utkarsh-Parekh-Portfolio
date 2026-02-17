@@ -159,20 +159,20 @@ class _ProjectCardState extends State<_ProjectCard> {
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeOutCubic,
           transform: Matrix4.identity()
-            ..translate(0.0, _isHovered ? -8.0 : 0.0),
+            ..translateByDouble(0.0, _isHovered ? -8.0 : 0.0, 0.0,0.0),
           decoration: BoxDecoration(
             gradient: AppColors.cardGradient,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
               color: _isHovered
-                  ? AppColors.primaryPurple.withOpacity(0.5)
-                  : AppColors.primaryPurple.withOpacity(0.15),
+                  ? AppColors.primaryPurple.withValues(alpha: 0.5)
+                  : AppColors.primaryPurple.withValues(alpha: 0.15),
               width: _isHovered ? 2 : 1,
             ),
             boxShadow: _isHovered
                 ? [
                     BoxShadow(
-                      color: AppColors.primaryPurple.withOpacity(0.3),
+                      color: AppColors.primaryPurple.withValues(alpha: 0.3),
                       blurRadius: 30,
                       spreadRadius: 5,
                       offset: const Offset(0, 10),
@@ -180,7 +180,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                   ]
                 : [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
+                      color: Colors.black.withValues(alpha:0.2),
                       blurRadius: 15,
                       spreadRadius: 2,
                     ),
@@ -202,8 +202,8 @@ class _ProjectCardState extends State<_ProjectCard> {
                       shape: BoxShape.circle,
                       gradient: RadialGradient(
                         colors: [
-                          widget.project.languageColor.withOpacity(
-                            _isHovered ? 0.3 : 0.15,
+                          widget.project.languageColor.withValues(
+                           alpha: _isHovered ? 0.3 : 0.15,
                           ),
                           Colors.transparent,
                         ],
@@ -225,7 +225,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                           Container(
                             padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
-                              color: widget.project.languageColor.withOpacity(0.15),
+                              color: widget.project.languageColor.withValues(alpha:   0.15),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Icon(
@@ -240,7 +240,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                               vertical: 6,
                             ),
                             decoration: BoxDecoration(
-                              color: widget.project.languageColor.withOpacity(0.2),
+                              color: widget.project.languageColor.withValues(alpha:  0.2),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Row(
@@ -332,7 +332,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                             AnimatedContainer(
                               duration: const Duration(milliseconds: 300),
                               transform: Matrix4.identity()
-                                ..translate(_isHovered ? 4.0 : 0.0, 0.0),
+                                ..translateByDouble(0.0, _isHovered ? -8.0 : 0.0, 0.0,0.0),
                               child: Icon(
                                 Icons.arrow_forward,
                                 size: 16,
@@ -365,10 +365,10 @@ class _ProjectCardState extends State<_ProjectCard> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: AppColors.darkBackground.withOpacity(0.5),
+        color: AppColors.darkBackground.withValues(alpha:   0.5),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: AppColors.primaryPurple.withOpacity(0.2),
+          color: AppColors.primaryPurple.withValues(alpha:   0.2),
         ),
       ),
       child: Text(

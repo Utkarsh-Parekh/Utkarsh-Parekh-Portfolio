@@ -112,7 +112,7 @@ class _SkillCategoryWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: category.categoryColor.withOpacity(0.15),
+                  color: category.categoryColor.withValues(alpha:  0.15),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Icon(
@@ -195,12 +195,12 @@ class _SkillChipState extends State<_SkillChip> {
         ),
         decoration: BoxDecoration(
           color: _isHovered 
-              ? const Color(0xFF2196F3).withOpacity(0.15)
+              ? const Color(0xFF2196F3).withValues(alpha:   0.15)
               : Colors.transparent,
           borderRadius: BorderRadius.circular(25),
           border: Border.all(
             color: _isHovered 
-                ? const Color(0xFF2196F3).withOpacity(0.5)
+                ? const Color(0xFF2196F3).withValues(alpha:  0.5)
                 : const Color(0xFF3A3A5C),
             width: 1.5,
           ),

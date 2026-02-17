@@ -177,7 +177,7 @@ class _ExperienceCardState extends State<_ExperienceCard>
                 color: (widget.experience.isCurrent
                         ? AppColors.accentGreen
                         : AppColors.primaryPurple)
-                    .withOpacity(0.5),
+                    .withValues(alpha:  0.5),
                 blurRadius: 10,
                 spreadRadius: 2,
               ),
@@ -196,7 +196,7 @@ class _ExperienceCardState extends State<_ExperienceCard>
                 end: Alignment.bottomCenter,
                 colors: [
                   AppColors.primaryPurple,
-                  AppColors.primaryPurple.withOpacity(0.3),
+                  AppColors.primaryPurple.withValues(alpha:   0.3),
                 ],
               ),
             ),
@@ -220,14 +220,14 @@ class _ExperienceCardState extends State<_ExperienceCard>
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: _isHovered || _isExpanded
-                  ? widget.experience.companyColor.withOpacity(0.5)
-                  : AppColors.primaryPurple.withOpacity(0.2),
+                  ? widget.experience.companyColor.withValues(alpha:   0.5)
+                  : AppColors.primaryPurple.withValues(alpha:  0.2),
               width: _isHovered || _isExpanded ? 2 : 1,
             ),
             boxShadow: _isHovered || _isExpanded
                 ? [
                     BoxShadow(
-                      color: widget.experience.companyColor.withOpacity(0.2),
+                      color: widget.experience.companyColor.withValues(alpha:  0.2),
                       blurRadius: 20,
                       spreadRadius: 2,
                     ),
@@ -273,7 +273,7 @@ class _ExperienceCardState extends State<_ExperienceCard>
         Container(
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
-            color: widget.experience.companyColor.withOpacity(0.15),
+            color: widget.experience.companyColor.withValues(alpha:  0.15),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(
@@ -383,8 +383,8 @@ class _ExperienceCardState extends State<_ExperienceCard>
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
         color: widget.experience.isCurrent
-            ? AppColors.accentGreen.withOpacity(0.15)
-            : AppColors.primaryPurple.withOpacity(0.15),
+            ? AppColors.accentGreen.withValues(alpha:   0.15)
+            : AppColors.primaryPurple.withValues(alpha:  0.15),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(

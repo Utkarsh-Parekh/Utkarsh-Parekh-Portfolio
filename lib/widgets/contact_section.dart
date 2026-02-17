@@ -52,7 +52,7 @@ class ContactSection extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             AppColors.darkBackground,
-            AppColors.primaryPurple.withOpacity(0.05),
+            AppColors.primaryPurple.withValues(alpha:  0.05),
             AppColors.darkBackground,
           ],
         ),
@@ -135,11 +135,11 @@ class ContactSection extends StatelessWidget {
         gradient: AppColors.cardGradient,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: AppColors.primaryPurple.withOpacity(0.2),
+          color: AppColors.primaryPurple.withValues(alpha:  0.2),
         ),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryPurple.withOpacity(0.15),
+            color: AppColors.primaryPurple.withValues(alpha:   0.15),
             blurRadius: 40,
             spreadRadius: 10,
           ),
@@ -155,7 +155,7 @@ class ContactSection extends StatelessWidget {
               shape: BoxShape.circle,
               boxShadow: [
                 BoxShadow(
-                  color: AppColors.primaryPurple.withOpacity(0.4),
+                  color: AppColors.primaryPurple.withValues(alpha:   0.4),
                   blurRadius: 20,
                   spreadRadius: 5,
                 ),
@@ -237,7 +237,7 @@ class ContactSection extends StatelessWidget {
             gradient: LinearGradient(
               colors: [
                 Colors.transparent,
-                AppColors.primaryPurple.withOpacity(0.3),
+                AppColors.primaryPurple.withValues( alpha:  0.3),
                 Colors.transparent,
               ],
             ),

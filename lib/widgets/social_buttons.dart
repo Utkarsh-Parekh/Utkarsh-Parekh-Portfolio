@@ -58,18 +58,18 @@ class SocialLinkButtonState extends State<SocialLinkButton> {
               ),
               decoration: BoxDecoration(
                 color: _isHovered
-                    ? widget.color.withOpacity(0.2)
+                    ? widget.color.withValues(alpha:   0.2)
                     : AppColors.cardBackground,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: _isHovered
-                      ? widget.color.withOpacity(0.5)
-                      : AppColors.primaryPurple.withOpacity(0.2),
+                      ? widget.color.withValues(alpha: 0.5)
+                      : AppColors.primaryPurple.withValues(alpha:   0.2),
                 ),
                 boxShadow: _isHovered
                     ? [
                         BoxShadow(
-                          color: widget.color.withOpacity(0.3),
+                          color: widget.color.withValues(alpha:  0.3),
                           blurRadius: 15,
                           spreadRadius: 2,
                         ),

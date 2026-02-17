@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
         gradient: AppColors.primaryGradient,
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryPurple.withOpacity(0.4),
+            color: AppColors.primaryPurple.withValues(alpha:  0.4),
             blurRadius: 15,
             spreadRadius: 2,
           ),
@@ -194,10 +194,10 @@ class CustomNavBar extends StatelessWidget implements PreferredSizeWidget {
       height: 70,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
-        color: AppColors.darkBackground.withOpacity(0.9),
+        color: AppColors.darkBackground.withValues(alpha:   0.9),
         border: Border(
           bottom: BorderSide(
-            color: AppColors.primaryPurple.withOpacity(0.2),
+            color: AppColors.primaryPurple.withValues(alpha:  0.2),
           ),
         ),
       ),

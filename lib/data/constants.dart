@@ -145,7 +145,7 @@ final List<ProjectModel> projectsData = [
     name: 'Gemini-ChatBot',
     description:
         'AI-powered chatbot application built with Flutter, integrating Google\'s Gemini API for intelligent conversations and responses.',
-    techStack: const ['Flutter', 'Dart', 'Gemini API', 'BLoC'],
+    techStack:  ['Flutter', 'Dart', 'Gemini API', 'BLoC'],
     githubUrl: String.fromEnvironment(EnvKeys.projectGeminiBotGithubUrl, defaultValue: ''),
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -155,7 +155,7 @@ final List<ProjectModel> projectsData = [
     name: 'Tasks-App-Flutter',
     description:
         'A beautiful and functional task management application with intuitive UI, local storage, and smooth animations.',
-    techStack: const ['Flutter', 'Dart', 'SQLite', 'Provider'],
+    techStack:  ['Flutter', 'Dart', 'SQLite', 'Provider'],
     githubUrl: String.fromEnvironment(EnvKeys.projectTasksGithubUrl, defaultValue: ''),
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -165,7 +165,7 @@ final List<ProjectModel> projectsData = [
     name: 'Grocery-Shopping-App',
     description:
         'Complete grocery shopping solution with product catalog, cart management, and seamless checkout experience.',
-    techStack: const ['Flutter', 'Dart', 'Stripe', 'Provider'],
+    techStack:  ['Flutter', 'Dart', 'Stripe', 'Provider'],
     githubUrl: String.fromEnvironment(EnvKeys.projectGroceryGithubUrl, defaultValue: ''),
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -175,7 +175,7 @@ final List<ProjectModel> projectsData = [
     name: 'EV-Charging-App',
     description:
         'Developed a modern, responsive EV Charging app in Flutter by converting a professional Figma design into dynamic, pixel-perfect screens. Integrated Google Sign-In, Light & Dark theme switching, and implemented clean, maintainable code for scalable cross-platform performance.',
-    techStack: const ['Flutter', 'Dart', 'Responsive', 'Firebase'],
+    techStack:  ['Flutter', 'Dart', 'Responsive', 'Firebase'],
     githubUrl: String.fromEnvironment(EnvKeys.projectEVsGithubUrl, defaultValue: ''),
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -185,7 +185,7 @@ final List<ProjectModel> projectsData = [
     name: 'Google Maps Integration',
     description:
         'Comprehensive Google Maps implementation showcasing markers, routes, location tracking, and custom styling.',
-    techStack: const ['Flutter', 'Dart', 'Google Maps SDK', 'Geolocator'],
+    techStack:  ['Flutter', 'Dart', 'Google Maps SDK', 'Geolocator'],
     githubUrl: String.fromEnvironment(EnvKeys.projectGoogleMapGithubUrl, defaultValue: ''),
     language: 'Dart',
     languageColor: AppColors.dartColor,
@@ -195,7 +195,7 @@ final List<ProjectModel> projectsData = [
     name: 'Authentication Backend',
     description:
         'Secure backend authentication system with JWT tokens, user management, and RESTful API endpoints.',
-    techStack: const ['Node.js', 'Express', 'JWT', 'MongoDB'],
+    techStack:  ['Node.js', 'Express', 'JWT', 'MongoDB'],
     githubUrl: String.fromEnvironment(EnvKeys.projectAuthBackendGithubUrl, defaultValue: ''),
     language: 'JavaScript',
     languageColor: AppColors.javascriptColor,

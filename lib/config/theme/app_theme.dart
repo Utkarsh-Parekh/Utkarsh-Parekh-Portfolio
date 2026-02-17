@@ -64,7 +64,7 @@ class AppThemes{
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide(
-          color: AppColors.primaryPurple.withOpacity(0.2),
+          color: AppColors.primaryPurple.withValues(alpha:   0.2),
         ),
       ),
       focusedBorder: OutlineInputBorder(
@@ -80,7 +80,7 @@ class AppThemes{
       color: AppColors.textSecondary,
     ),
     dividerTheme: DividerThemeData(
-      color: AppColors.primaryPurple.withOpacity(0.2),
+      color: AppColors.primaryPurple.withValues(alpha:  0.2),
       thickness: 1,
     ),
     tooltipTheme: TooltipThemeData(
@@ -88,7 +88,7 @@ class AppThemes{
         color: AppColors.cardBackground,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: AppColors.primaryPurple.withOpacity(0.3),
+          color: AppColors.primaryPurple.withValues(alpha:  0.3),
         ),
       ),
       textStyle: const TextStyle(
@@ -98,7 +98,7 @@ class AppThemes{
     ),
     scrollbarTheme: ScrollbarThemeData(
       thumbColor: WidgetStateProperty.all(
-        AppColors.primaryPurple.withOpacity(0.5),
+        AppColors.primaryPurple.withValues( alpha: 0.5),
       ),
       radius: const Radius.circular(4),
       thickness: WidgetStateProperty.all(8),
