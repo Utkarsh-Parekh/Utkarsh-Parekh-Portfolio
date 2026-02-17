@@ -95,7 +95,7 @@ class ProjectsSection extends StatelessWidget {
         crossAxisCount: crossAxisCount,
         crossAxisSpacing: 20,
         mainAxisSpacing: 20,
-        childAspectRatio: isMobile ? 1.2 : 0.95,
+        childAspectRatio: isMobile ? 1 : 0.95,
       ),
       itemCount: projectsData.length,
       itemBuilder: (context, index) {
@@ -288,16 +288,16 @@ class _ProjectCardState extends State<_ProjectCard> {
                         child: Text(
                           widget.project.description,
                           style: GoogleFonts.poppins(
-                            fontSize: 13,
+                            fontSize: 14,
                             color: AppColors.textSecondary,
-                            height: 1.6,
+                            height: 1.5,
                           ),
-                          maxLines: 3,
+                          maxLines: 4,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 10),
                       
                       // Tech stack
                       Wrap(

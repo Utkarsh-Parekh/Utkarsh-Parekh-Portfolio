@@ -143,7 +143,6 @@ final List<ExperienceModel> experienceData = [
 ];
 
 // ==================== PROJECTS DATA ====================
-// Project GitHub URLs are injected via individual environment variables (PROJECT_GEMINIBOT_GITHUB_URL, etc.).
 
 final List<ProjectModel> projectsData = [
   const ProjectModel(
