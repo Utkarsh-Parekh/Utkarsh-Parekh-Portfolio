@@ -150,7 +150,11 @@ class _ProjectCardState extends State<_ProjectCard> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: GestureDetector(
-        onTap: () => _launchUrl(widget.project.githubUrl),
+        onTap: () {
+          if (widget.project.githubUrl.isNotEmpty) {
+            _launchUrl(widget.project.githubUrl);
+          }
+        },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           curve: Curves.easeOutCubic,

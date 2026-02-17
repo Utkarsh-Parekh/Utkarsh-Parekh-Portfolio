@@ -1,0 +1,107 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  PROFILE_EMAIL: ${{ secrets.PROFILE_EMAIL }}
+  PROFILE_RESUME_URL: ${{ secrets.PROFILE_RESUME_URL }}
+  PROFILE_GITHUB_URL: ${{ secrets.PROFILE_GITHUB_URL }}
+  PROFILE_LINKEDIN_URL: ${{ secrets.PROFILE_LINKEDIN_URL }}
+  PROFILE_INSTAGRAM_URL: ${{ secrets.PROFILE_INSTAGRAM_URL }}
+  PROJECT_GEMINIBOT_GITHUB_URL: ${{ secrets.PROJECT_GEMINIBOT_GITHUB_URL }}
+  PROJECT_TASKS_GITHUB_URL: ${{ secrets.PROJECT_TASKS_GITHUB_URL }}
+  PROJECT_GROCERY_GITHUB_URL: ${{ secrets.PROJECT_GROCERY_GITHUB_URL }}
+  PROJECT_EV_GITHUB_URL: ${{ secrets.PROJECT_EV_GITHUB_URL }}
+  PROJECT_GOOGLEMAPS_GITHUB_URL: ${{ secrets.PROJECT_GOOGLEMAPS_GITHUB_URL }}
+  PROJECT_AUTHBACKEND_GITHUB_URL: ${{ secrets.PROJECT_AUTHBACKEND_GITHUB_URL }}
+
+jobs:
+  # PR validation: analyze and test only
+  validate:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        run: flutter test
+
+  # Deploy portfolio to GitHub Pages on push to main
+  deploy:
+    if: ${{ github.event_name == 'push' && (github.ref_name == 'main' || github.ref_name == 'master') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.0'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        run: flutter test
+
+      - name: Build web for GitHub Pages
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          BASE_HREF="/${REPO_NAME}/"
+          if [[ "${REPO_NAME}" == *.github.io ]]; then
+            BASE_HREF="/"
+          fi
+          flutter build web \
+            --release \
+            --base-href "${BASE_HREF}" \
+            --dart-define=PROFILE_EMAIL="$PROFILE_EMAIL" \
+            --dart-define=PROFILE_RESUME_URL="$PROFILE_RESUME_URL" \
+            --dart-define=PROFILE_GITHUB_URL="$PROFILE_GITHUB_URL" \
+            --dart-define=PROFILE_LINKEDIN_URL="$PROFILE_LINKEDIN_URL" \
+            --dart-define=PROFILE_INSTAGRAM_URL="$PROFILE_INSTAGRAM_URL" \
+            --dart-define=PROJECT_GEMINIBOT_GITHUB_URL="$PROJECT_GEMINIBOT_GITHUB_URL" \
+            --dart-define=PROJECT_TASKS_GITHUB_URL="$PROJECT_TASKS_GITHUB_URL" \
+            --dart-define=PROJECT_GROCERY_GITHUB_URL="$PROJECT_GROCERY_GITHUB_URL" \
+            --dart-define=PROJECT_EV_GITHUB_URL="$PROJECT_EV_GITHUB_URL" \
+            --dart-define=PROJECT_GOOGLEMAPS_GITHUB_URL="$PROJECT_GOOGLEMAPS_GITHUB_URL" \
+            --dart-define=PROJECT_AUTHBACKEND_GITHUB_URL="$PROJECT_AUTHBACKEND_GITHUB_URL"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
