@@ -292,7 +292,7 @@ class _ProjectCardState extends State<_ProjectCard> {
                             color: AppColors.textSecondary,
                             height: 1.5,
                           ),
-                          maxLines: 4,
+                          maxLines: 10,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

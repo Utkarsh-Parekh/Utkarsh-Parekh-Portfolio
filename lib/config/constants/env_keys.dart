@@ -13,4 +13,5 @@ class EnvKeys {
   static const String projectEVsGithubUrl = 'PROJECT_EV_GITHUB_URL';
   static const String projectGoogleMapGithubUrl = 'PROJECT_GOOGLEMAPS_GITHUB_URL';
   static const String projectAuthBackendGithubUrl = 'PROJECT_AUTHBACKEND_GITHUB_URL';
+  static const String projectContactAPIGithubUrl = 'PROJECT_CONTACTAPI_GITHUB_URL';
 }

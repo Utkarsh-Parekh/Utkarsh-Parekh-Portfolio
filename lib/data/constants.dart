@@ -223,4 +223,16 @@ final List<ProjectModel> projectsData = [
     languageColor: AppColors.javascriptColor,
     icon: Icons.security,
   ),
+  const ProjectModel(
+    name: 'Secure JWT-Based Contact API',
+    description: 'Designed and developed a secure RESTful backend API using Node.js and Express, enabling user authentication and full contact management with robust CRUD operations. Implemented JWT-based authentication and bcrypt password hashing to ensure secure access control. Structured the application using a modular and scalable architecture with MongoDB for efficient data management, following production-level best practices.',
+    techStack: ['Node.js', 'Express', 'JWT', 'MongoDB'],
+    githubUrl: String.fromEnvironment(
+      EnvKeys.projectContactAPIGithubUrl,
+      defaultValue: '',
+    ),
+    language: 'JavaScript',
+    languageColor: AppColors.javascriptColor,
+    icon: Icons.security,
+  ),
 ];
