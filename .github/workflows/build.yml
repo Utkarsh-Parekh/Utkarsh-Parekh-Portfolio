@@ -95,8 +95,8 @@ jobs:
             --dart-define=PROJECT_GROCERY_GITHUB_URL="$PROJECT_GROCERY_GITHUB_URL" \
             --dart-define=PROJECT_EV_GITHUB_URL="$PROJECT_EV_GITHUB_URL" \
             --dart-define=PROJECT_GOOGLEMAPS_GITHUB_URL="$PROJECT_GOOGLEMAPS_GITHUB_URL" \
-            --dart-define=PROJECT_AUTHBACKEND_GITHUB_URL="$PROJECT_AUTHBACKEND_GITHUB_URL"\
-            --dart-define= PROJECT_CONTACTAPI_GITHUB_URL="$PROJECT_CONTACTAPI_GITHUB_URL"
+            --dart-define=PROJECT_AUTHBACKEND_GITHUB_URL="$PROJECT_AUTHBACKEND_GITHUB_URL" \
+            --dart-define=PROJECT_CONTACTAPI_GITHUB_URL="$PROJECT_CONTACTAPI_GITHUB_URL"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
