@@ -14,8 +14,7 @@ class ProfileData {
     defaultValue: '',
   );
 
-  static const String bio = '''Mobile Engineer with 3+ years of experience in building scalable, high-performance mobile applications across Flutter and native Android. Skilled in Dart, Kotlin, Java, REST API integration, state management, and clean architecture, with a strong focus on UI/UX best practices, performance optimization, and maintainable code.''';
-
+  static const String bio = """ Full Stack Developer with 3+ years of experience building cross-platform mobile apps and backend systems. Skilled in Flutter, Dart, Node.js, Express.js, MongoDB, BLoC Architecture, REST API Integration and State Management — with a strong focus on clean architecture, scalable code and end-to-end product development.  """;
   static const String githubUrl = String.fromEnvironment(
     EnvKeys.profileGithubUrl,
     defaultValue: '',
